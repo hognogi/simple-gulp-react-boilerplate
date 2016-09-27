@@ -40,7 +40,7 @@ var Store = function(){
 
 
 
-	//"connections" the server to the store
+	//"connections" from the server to the store
 	_eventBus.on('counterUpdatedOnTheServer', function(){
 		counter ++;
 		_eventBus.emit('storeUpdated'); //signal all the listeners that the store was updated
@@ -49,7 +49,7 @@ var Store = function(){
 
 
 
-	//connections from the root components to the root elements
+	//connections from the root components to the store
 	this.addUpdateListener = function(callback) {
 		_eventBus.on('storeUpdated', callback);
 	}
